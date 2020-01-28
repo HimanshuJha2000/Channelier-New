@@ -22,6 +22,7 @@
 		4AE64F032376818F00ED0513 /* FeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE64F022376818F00ED0513 /* FeedsViewController.swift */; };
 		4AE64F062376A57800ED0513 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE64F052376A57800ED0513 /* ContactsVC.swift */; };
 		4AE64F0A2376CAB400ED0513 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE64F092376CAB400ED0513 /* SettingsVC.swift */; };
+		A4E1598923E05EDA0084423D /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E1598823E05EDA0084423D /* CheckInternet.swift */; };
 		B548DB189EF37318C622197F /* Pods_Channelier_new.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7604D139DA9C185A5A72E376 /* Pods_Channelier_new.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		4AE64F092376CAB400ED0513 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		7604D139DA9C185A5A72E376 /* Pods_Channelier_new.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Channelier_new.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8259E91EC8387C4799A6CCFF /* Pods-Channelier new.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channelier new.debug.xcconfig"; path = "Target Support Files/Pods-Channelier new/Pods-Channelier new.debug.xcconfig"; sourceTree = "<group>"; };
+		A4E1598823E05EDA0084423D /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		EF86CEC98690721A9768C46B /* Pods-Channelier new.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channelier new.release.xcconfig"; path = "Target Support Files/Pods-Channelier new/Pods-Channelier new.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 				4ADCBD0C2359AC66006DBCD1 /* Assets.xcassets */,
 				4ADCBD0E2359AC66006DBCD1 /* LaunchScreen.storyboard */,
 				4ADCBD112359AC66006DBCD1 /* Info.plist */,
+				A4E1598823E05EDA0084423D /* CheckInternet.swift */,
 			);
 			path = "Channelier new";
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				4A3A4D77236DB35B00A3182F /* HomeViewController.swift in Sources */,
 				4AA215ED2377F24500939764 /* Add Contact VC.swift in Sources */,
 				4AA2938B2360647300586E12 /* Constants.swift in Sources */,
+				A4E1598923E05EDA0084423D /* CheckInternet.swift in Sources */,
 				4AE64F062376A57800ED0513 /* ContactsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z979VF3LL3;
 				INFOPLIST_FILE = "Channelier new/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -480,6 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z979VF3LL3;
 				INFOPLIST_FILE = "Channelier new/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

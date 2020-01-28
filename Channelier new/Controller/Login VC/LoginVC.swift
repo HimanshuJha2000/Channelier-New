@@ -20,6 +20,8 @@ class LoginVC: UIViewController {
     var checkBoxNumber = 0
     var iconClick = true
     var emailID = "nil"
+    var refreshToken = "none"
+    var token = "none"
     
     func openLink(urlString : String) {
         guard let url = URL(string: urlString) else {
@@ -237,15 +239,80 @@ class LoginVC: UIViewController {
 
        
     @IBAction func loginBtnAction(_ sender: Any) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier : "HomeViewController" )
-            controller.modalPresentationStyle = .fullScreen
-           // let navController = UINavigationController (rootViewController: controller)
-            self.present(controller, animated: true, completion: nil)
-            //self.navigationController?.navigationBar.isHidden = true
+                    if (CheckInternet.Connection() == true && self.checkBoxNumber == 1){
+                        let parameters = ["email":emailUsernameTxtField.text ?? "none","password":passwordTxtField.text ?? "none"] as [String : Any]
+                        print(parameters)
+                        guard let url = URL(string:  "https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=0&date=0&key=12345&syncdate=0") else { return }
+                            var request = URLRequest(url: url)
+                            request.httpMethod = "POST"
+                            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                            guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+                            request.httpBody = httpBody
+                        
+                            let session = URLSession.shared
+                            session.dataTask(with: request) { (data, response, error) in
+                                
+                                if let data = data {
+                                    do {
+                                        let json = try JSONSerialization.jsonObject(with: data, options: [])
+            //                            print(json)
+                                        if let dictionary = json as? [String: Any?] {
+            //                                print(dictionary)
+                                            let gcm_success_integer = dictionary["gcm_success"] as? Int32
+                                            let succes_integer = dictionary["success"] as? Int32
+                                            if (gcm_success_integer == 0 && succes_integer == 1)
+                                            {
+                                                self.validLogin()
+                                                print("I really came here")
+                                            }
+                                            else if(gcm_success_integer == 1 && succes_integer == 1){
+                                                print("api hit successful")
+                                                DispatchQueue.main.async(execute: {
+                                                    let tokenValue = dictionary["tokens"] as? [String: Any?]
+                                                    let refreshToken = tokenValue!["refresh_token"] as? String
+                                                    self.refreshToken = refreshToken!
+                                                    print(refreshToken!)
+                                                    let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                                    let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                                                    vc.modalPresentationStyle = .fullScreen
+                                                    self.present(vc, animated: false, completion: nil)
+                                                })
+                                            }
+                                            else {
+                                                print("I came here")
+                                                self.wrongCredentials()
+                                            }
+                                        }
+            //                            print(json)
+                                    } catch {
+                                        print(error)
+                                    }
+                                }
+                                
+                            }.resume()
+                       // dismiss(animated: false, completion: nil)
+                     
+                    }
+                    
+                    else if(CheckInternet.Connection() == false){
+                        self.Alert(Message: "No Internet Connection")
+                    }
+                        
+                    else if(self.checkBoxNumber == 0){
+                        self.Alert(Message: "Please select the terms and conditions")
+                    }
+                    
+                    else {
+                        self.Alert(Message: "No user registered with this E-mail ID")
+                    }
+
         }
         
-        
+        @objc func dismissKeyboard() {
+            self.view.endEditing(true)
+        }
+    
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             checkBoxBtn.layer.borderColor = UIColor.white.cgColor
@@ -256,6 +323,9 @@ class LoginVC: UIViewController {
             loginBtn.layer.cornerRadius = 5
             emailUsernameTxtField.setLeftPaddingPoints(10)
             passwordTxtField.setLeftPaddingPoints(10)
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+            self.view.addGestureRecognizer(tap)
             
 //            checkBoxBtn.setImage(UIImage(named:"UncheckedBox"), for: .normal)
 //            checkBoxBtn.setImage(UIImage(named:"CheckBox"), for: .selected)
