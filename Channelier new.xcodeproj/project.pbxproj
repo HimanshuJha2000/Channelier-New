@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1078E6E11997BD1790D49CB9 /* Pods_Channelier_new.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB04CE1596234C0797809E8 /* Pods_Channelier_new.framework */; };
 		4A3A4D77236DB35B00A3182F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3A4D76236DB35B00A3182F /* HomeViewController.swift */; };
-		4A6A04E0236046FF00B37CE7 /* channelier api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A04DF236046FF00B37CE7 /* channelier api.swift */; };
 		4AA215EB2377EDEE00939764 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA215EA2377EDEE00939764 /* ProfileVC.swift */; };
 		4AA215ED2377F24500939764 /* Add Contact VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA215EC2377F24500939764 /* Add Contact VC.swift */; };
 		4AA2938B2360647300586E12 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA2938A2360647200586E12 /* Constants.swift */; };
@@ -24,12 +22,11 @@
 		4AE64F032376818F00ED0513 /* FeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE64F022376818F00ED0513 /* FeedsViewController.swift */; };
 		4AE64F062376A57800ED0513 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE64F052376A57800ED0513 /* ContactsVC.swift */; };
 		4AE64F0A2376CAB400ED0513 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE64F092376CAB400ED0513 /* SettingsVC.swift */; };
+		B548DB189EF37318C622197F /* Pods_Channelier_new.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7604D139DA9C185A5A72E376 /* Pods_Channelier_new.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1FB50AE2E8995DEE52E9F497 /* Pods-Channelier new.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channelier new.debug.xcconfig"; path = "Target Support Files/Pods-Channelier new/Pods-Channelier new.debug.xcconfig"; sourceTree = "<group>"; };
 		4A3A4D76236DB35B00A3182F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		4A6A04DF236046FF00B37CE7 /* channelier api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "channelier api.swift"; sourceTree = "<group>"; };
 		4AA215EA2377EDEE00939764 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		4AA215EC2377F24500939764 /* Add Contact VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Contact VC.swift"; sourceTree = "<group>"; };
 		4AA2938A2360647200586E12 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -46,8 +43,9 @@
 		4AE64F022376818F00ED0513 /* FeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsViewController.swift; sourceTree = "<group>"; };
 		4AE64F052376A57800ED0513 /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
 		4AE64F092376CAB400ED0513 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		AFB04CE1596234C0797809E8 /* Pods_Channelier_new.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Channelier_new.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC668A649EDDF1DDED73C4A5 /* Pods-Channelier new.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channelier new.release.xcconfig"; path = "Target Support Files/Pods-Channelier new/Pods-Channelier new.release.xcconfig"; sourceTree = "<group>"; };
+		7604D139DA9C185A5A72E376 /* Pods_Channelier_new.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Channelier_new.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8259E91EC8387C4799A6CCFF /* Pods-Channelier new.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channelier new.debug.xcconfig"; path = "Target Support Files/Pods-Channelier new/Pods-Channelier new.debug.xcconfig"; sourceTree = "<group>"; };
+		EF86CEC98690721A9768C46B /* Pods-Channelier new.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channelier new.release.xcconfig"; path = "Target Support Files/Pods-Channelier new/Pods-Channelier new.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1078E6E11997BD1790D49CB9 /* Pods_Channelier_new.framework in Frameworks */,
+				B548DB189EF37318C622197F /* Pods_Channelier_new.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,14 +90,6 @@
 			path = "Home VC";
 			sourceTree = "<group>";
 		};
-		4A6A04DE236046BD00B37CE7 /* Api */ = {
-			isa = PBXGroup;
-			children = (
-				4A6A04DF236046FF00B37CE7 /* channelier api.swift */,
-			);
-			path = Api;
-			sourceTree = "<group>";
-		};
 		4AA215E92377ECCF00939764 /* Profile VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +119,7 @@
 				4ADCBD022359AC65006DBCD1 /* Channelier new */,
 				4ADCBD012359AC65006DBCD1 /* Products */,
 				6189CC70765D59009D2D0534 /* Pods */,
-				6924856399862E883BF95C5D /* Frameworks */,
+				78257F38229FFE8D78A04C55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,7 +137,6 @@
 				4AA293892360645A00586E12 /* Models */,
 				4A3A4D73236D991F00A3182F /* View */,
 				4A3A4D74236D992700A3182F /* Controller */,
-				4A6A04DE236046BD00B37CE7 /* Api */,
 				4AC4A401235E2576007DEC0F /* Helper */,
 				4ADCBD032359AC65006DBCD1 /* AppDelegate.swift */,
 				4ADCBD052359AC65006DBCD1 /* SceneDelegate.swift */,
@@ -187,16 +176,16 @@
 		6189CC70765D59009D2D0534 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1FB50AE2E8995DEE52E9F497 /* Pods-Channelier new.debug.xcconfig */,
-				BC668A649EDDF1DDED73C4A5 /* Pods-Channelier new.release.xcconfig */,
+				8259E91EC8387C4799A6CCFF /* Pods-Channelier new.debug.xcconfig */,
+				EF86CEC98690721A9768C46B /* Pods-Channelier new.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		6924856399862E883BF95C5D /* Frameworks */ = {
+		78257F38229FFE8D78A04C55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AFB04CE1596234C0797809E8 /* Pods_Channelier_new.framework */,
+				7604D139DA9C185A5A72E376 /* Pods_Channelier_new.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -208,11 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4ADCBD142359AC66006DBCD1 /* Build configuration list for PBXNativeTarget "Channelier new" */;
 			buildPhases = (
-				46FFBDADFAC9A29F15A30ABC /* [CP] Check Pods Manifest.lock */,
+				27E80C0138AD5BD324E3058A /* [CP] Check Pods Manifest.lock */,
 				4ADCBCFC2359AC65006DBCD1 /* Sources */,
 				4ADCBCFD2359AC65006DBCD1 /* Frameworks */,
 				4ADCBCFE2359AC65006DBCD1 /* Resources */,
-				B57E2AA1F17C363BC070DFE1 /* [CP] Embed Pods Frameworks */,
+				596E2EA843D92FB45F3CC5DA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,7 +259,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		46FFBDADFAC9A29F15A30ABC /* [CP] Check Pods Manifest.lock */ = {
+		27E80C0138AD5BD324E3058A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -292,7 +281,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B57E2AA1F17C363BC070DFE1 /* [CP] Embed Pods Frameworks */ = {
+		596E2EA843D92FB45F3CC5DA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -319,7 +308,6 @@
 				4AA215EB2377EDEE00939764 /* ProfileVC.swift in Sources */,
 				4AE64F0A2376CAB400ED0513 /* SettingsVC.swift in Sources */,
 				4AE64EFE2375B79B00ED0513 /* MenuViewControllerTableViewController.swift in Sources */,
-				4A6A04E0236046FF00B37CE7 /* channelier api.swift in Sources */,
 				4ADCBD042359AC65006DBCD1 /* AppDelegate.swift in Sources */,
 				4ADCBD192359C273006DBCD1 /* LoginVC.swift in Sources */,
 				4ADCBD062359AC65006DBCD1 /* SceneDelegate.swift in Sources */,
@@ -470,7 +458,7 @@
 		};
 		4ADCBD152359AC66006DBCD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FB50AE2E8995DEE52E9F497 /* Pods-Channelier new.debug.xcconfig */;
+			baseConfigurationReference = 8259E91EC8387C4799A6CCFF /* Pods-Channelier new.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -488,7 +476,7 @@
 		};
 		4ADCBD162359AC66006DBCD1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC668A649EDDF1DDED73C4A5 /* Pods-Channelier new.release.xcconfig */;
+			baseConfigurationReference = EF86CEC98690721A9768C46B /* Pods-Channelier new.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

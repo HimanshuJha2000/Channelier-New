@@ -1,21 +1,14 @@
-//
 //  LoginVC.swift
 //  Channelier new
-//
 //  Created by Himanshu Jha on 18/10/19.
 //  Copyright © 2019 Himanshu Jha. All rights reserved.
-//
+
 
 import UIKit
 import Foundation
 import Toast_Swift
-
 class LoginVC: UIViewController {
-    
-//    struct MyVariables {
-//        static var yourVariable = "someString"
-//    }
-        
+
     @IBOutlet weak var emailUsernameTxtField: UITextField!
             
     @IBOutlet weak var passwordTxtField: UITextField!
@@ -24,10 +17,9 @@ class LoginVC: UIViewController {
             
     @IBOutlet weak var loginBtn: UIButton!
             
-    var checkBoxNumber = 1
+    var checkBoxNumber = 0
     var iconClick = true
     var emailID = "nil"
-//    completion :(Bool, Int?, Error?)
     
     func openLink(urlString : String) {
         guard let url = URL(string: urlString) else {
@@ -83,6 +75,11 @@ class LoginVC: UIViewController {
         iconClick = !iconClick
     }
     
+    func Alert (Message: String){
+        let alert = UIAlertController(title: "Warning!", message: Message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func forgotPswBtn(_ sender: Any) {
         print("Function called")
@@ -121,12 +118,7 @@ class LoginVC: UIViewController {
               }
           }
       }.resume()
-
-                
     }
-                
-           
-            
             
             
             else if(self.emailID.isValidEmail()){
@@ -167,7 +159,6 @@ class LoginVC: UIViewController {
             else {
                 self.view.makeToast("Invalid Email/Mobile")
             }
-            
         }
         let cancel = UIAlertAction(title: "Cancel", style: .default)
         alert.addAction(cancel)
@@ -177,6 +168,69 @@ class LoginVC: UIViewController {
         }
         
         
+        func validLogin () {
+            DispatchQueue.main.async(execute: {
+                print("and thereafter i came here")
+                let alert = UIAlertController(title: "", message: "You are already logged in from another device, do you want to proceed ?", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+                    DispatchQueue.main.async(execute: {
+                        
+                        let parameters = ["email":self.emailUsernameTxtField.text ?? "none","password":self.passwordTxtField.text ?? "none"] as [String : Any]
+                                    
+                                    guard let url = URL(string:  "https://dev.channelier.com/index.php?route=feed/rest_api_v2/validateLogin&gcmToken=f94Wm0gGyag:APA91bGIxPBb5MbvXy2qWf4aL70VKtGUEVK8asCCwtOxDs-UHZhacFxBxXwuk2EvZ2ThghbXhAp4hDyppAN9QUP-9w9FmfPQu5GLGPHfI5HyIgP27UYU-x2kcZxmMoPjCMJs0J20vUXv&gcmFlag=1&date=0&key=12345&syncdate=0") else { return }
+                                        var request = URLRequest(url: url)
+                                        request.httpMethod = "POST"
+                                        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                                        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+                                        request.httpBody = httpBody
+                                    
+                                        let session = URLSession.shared
+                                        session.dataTask(with: request) { (data, response, error) in
+                                            
+                                            if let data = data {
+                                                do {
+                                                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+    //                                                print(json)
+                                                    if let dictionary = json as? [String: Any?] {
+                                                        //print(dictionary)
+                                                        let gcm_success_integer = dictionary["gcm_success"] as? Int32
+                                                        let succes_integer = dictionary["success"] as? Int32
+                                                        if(gcm_success_integer == 1 && succes_integer == 1){
+                                                            print("api hit successful")
+                                                            DispatchQueue.main.async(execute: {
+                                                                let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                                                let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                                                                vc.modalPresentationStyle = .fullScreen
+                                                                self.present(vc, animated: false, completion: nil)
+                                                            })
+                                                        }
+                                                        else {
+                                                            print("I came here")
+                                                            self.wrongCredentials()
+                                                        }
+                                                                                                                       
+                                                    }
+                                                } catch {
+                                                    print(error)
+                                                }
+                                            }
+                                            
+                                        }.resume()
+                        
+                    })
+                }))
+                self.present(alert, animated: true, completion: nil)
+            })
+        }
+    
+    
+    func wrongCredentials() {
+           DispatchQueue.main.async(execute: {
+               self.Alert(Message: "Wrong Credentials")
+           })
+       }
+    
     @IBAction func betaChannelierSite(_ sender: Any) {
            openLink(urlString: "https://beta.channelier.com/")
         }
