@@ -25,13 +25,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     
     @IBAction func didTapMenu(_ sender: UIButton) {
-        guard let menuViewController = storyboard?.instantiateViewController(identifier: "MenuViewController") as? MenuViewController else { return }
-        menuViewController.didTapMenuType = { menuType in
-             self.transitionToNew(menuType)
-        }
-        menuViewController.modalPresentationStyle = .overCurrentContext
-        menuViewController.transitioningDelegate = self
-        present(menuViewController, animated: true)
+        let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let menuViewController = mainstoryboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+                menuViewController.modalPresentationStyle = .overCurrentContext
+                
+                menuViewController.didTapMenuType = { menuType in
+                     self.transitionToNew(menuType)
+                }
+                menuViewController.transitioningDelegate = self
+                present(menuViewController, animated: true)
     }
     
     @IBAction func salesBtnAction(_ sender: UIButton) {
@@ -55,44 +57,46 @@ class HomeViewController: UIViewController {
         topView?.removeFromSuperview()
         switch menuType {
         case .home:
-//             if(self.presentedViewController == HomeViewController){
-//
-//            }
-            guard let HomeViewController = storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else { return }
-            HomeViewController.modalPresentationStyle = .overCurrentContext
-            present(HomeViewController, animated: false)
+            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
             
         case .contacts:
             let transition: CATransition = CATransition()
             performAnimation(transition: transition)
             self.view.window!.layer.add(transition, forKey: nil)
-            guard let ContactsVC = storyboard?.instantiateViewController(identifier: "ContactsVC") as? ContactsVC else { return }
-            ContactsVC.modalPresentationStyle = .overCurrentContext
-            present(ContactsVC, animated: false)
+            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = mainstoryboard.instantiateViewController(withIdentifier: "ContactsVC") as! ContactsVC
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
 
         case .feeds:
             let transition: CATransition = CATransition()
             performAnimation(transition: transition)
             self.view.window!.layer.add(transition, forKey: nil)
-            guard let FeedsViewController = storyboard?.instantiateViewController(identifier: "FeedsViewController") as? FeedsViewController else { return }
-            FeedsViewController.modalPresentationStyle = .overCurrentContext
-            present(FeedsViewController, animated: false)
+            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = mainstoryboard.instantiateViewController(withIdentifier: "FeedsViewController") as! FeedsViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
             
         case .settings:
             let transition: CATransition = CATransition()
             performAnimation(transition: transition)
             self.view.window!.layer.add(transition, forKey: nil)
-            guard let SettingsVC = storyboard?.instantiateViewController(identifier: "SettingsVC") as? SettingsVC else { return }
-            SettingsVC.modalPresentationStyle = .overCurrentContext
-            present(SettingsVC, animated: false)
+            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = mainstoryboard.instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
             
         case .profile:
             let transition: CATransition = CATransition()
             performAnimation(transition: transition)
             self.view.window!.layer.add(transition, forKey: nil)
-            guard let ProfileVC = storyboard?.instantiateViewController(identifier: "ProfileVC") as? ProfileVC else { return }
-            ProfileVC.modalPresentationStyle = .overCurrentContext
-            present(ProfileVC, animated: false)
+            let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = mainstoryboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
             
             
         default:

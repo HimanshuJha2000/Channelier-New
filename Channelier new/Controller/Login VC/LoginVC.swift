@@ -128,9 +128,6 @@ class LoginVC: UIViewController {
                     else { return }
                 let session = URLSession.shared
                 session.dataTask(with: url) { (data, response, err) in
-                    if let response = response {
-                        //print(response)
-                    }
                     
                     if let data = data {
                         do {

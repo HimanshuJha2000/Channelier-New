@@ -31,7 +31,7 @@
 		4AA215EA2377EDEE00939764 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		4AA215EC2377F24500939764 /* Add Contact VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Contact VC.swift"; sourceTree = "<group>"; };
 		4AA2938A2360647200586E12 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		4ADCBD002359AC65006DBCD1 /* Channelier new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Channelier new.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ADCBD002359AC65006DBCD1 /* Channelier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Channelier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADCBD032359AC65006DBCD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ADCBD052359AC65006DBCD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4ADCBD0A2359AC65006DBCD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		4ADCBD012359AC65006DBCD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4ADCBD002359AC65006DBCD1 /* Channelier new.app */,
+				4ADCBD002359AC65006DBCD1 /* Channelier.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 			);
 			name = "Channelier new";
 			productName = "Channelier new";
-			productReference = 4ADCBD002359AC65006DBCD1 /* Channelier new.app */;
+			productReference = 4ADCBD002359AC65006DBCD1 /* Channelier.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -230,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4ADCBCFB2359AC65006DBCD1 /* Build configuration list for PBXProject "Channelier new" */;
+			buildConfigurationList = 4ADCBCFB2359AC65006DBCD1 /* Build configuration list for PBXProject "Channelier" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -468,12 +468,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z979VF3LL3;
 				INFOPLIST_FILE = "Channelier new/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Channelier-new";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Channelier;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -487,12 +488,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z979VF3LL3;
 				INFOPLIST_FILE = "Channelier new/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Channelier-new";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Channelier;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -501,7 +503,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4ADCBCFB2359AC65006DBCD1 /* Build configuration list for PBXProject "Channelier new" */ = {
+		4ADCBCFB2359AC65006DBCD1 /* Build configuration list for PBXProject "Channelier" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4ADCBD122359AC66006DBCD1 /* Debug */,

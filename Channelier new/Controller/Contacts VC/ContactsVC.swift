@@ -17,16 +17,18 @@ class ContactsVC: UIViewController {
         transition.type = CATransitionType.reveal
         transition.subtype = CATransitionSubtype.fromRight
         self.view.window!.layer.add(transition, forKey: nil)
-        guard let HomeViewController = storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else { return }
-        HomeViewController.modalPresentationStyle = .overCurrentContext
-        present(HomeViewController, animated: false)
+        let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false, completion: nil)
     }
     
     @IBAction func addContactBtn(_ sender: UIButton) {
 //        Add_Contact_VC
-        guard let Add_Contact_VC = storyboard?.instantiateViewController(identifier: "Add_Contact_VC") as? Add_Contact_VC else { return }
-        Add_Contact_VC.modalPresentationStyle = .fullScreen
-        present(Add_Contact_VC, animated: true)
+        let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = mainstoryboard.instantiateViewController(withIdentifier: "Add_Contact_VC") as! Add_Contact_VC
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false, completion: nil)
         
     }
     
